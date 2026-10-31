@@ -1,0 +1,138 @@
+/* ==========================================================================
+   Stetwood Group — Timberline palette, light + dark themes
+   Light is the default. Dark applies when the OS prefers dark (unless the
+   visitor chose light with the toggle), or when the visitor chose dark.
+   Brass #9C7A45 (light) is decorative only; text uses deep brass #74582C.
+   ========================================================================== */
+:root{
+  color-scheme: light;
+  --bg:#f4f1ea; --soft:#eae5da; --card:#fcfbf7; --line:#ddd6c6;
+  --ink:#1a1f1b; --muted:#4a524d;
+  --heading:#132a1f; --link:#132a1f; --link-hover:#74582c;
+  --accent:#9c7a45;          /* decorative: rules, card borders */
+  --accent-text:#74582c;     /* brass-coloured text */
+  --focus:#74582c;
+  --btn-bg:#132a1f; --btn-ink:#f4f1ea; --btn-hover:#0b1a13; --ghost:#132a1f; --ghost-hover-bg:#fcfbf7;
+  --contact-bg:#132a1f; --contact-ink:#f4f1ea; --contact-body:#e6e0d2; --contact-link:#ffffff; --contact-hover:#cfae78; --contact-border:#9c7a45;
+  --max:68rem; --radius:12px;
+  font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+/* Dark tokens: kept in sync in both blocks below */
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme: dark;
+    --bg:#0f2219; --soft:#153026; --card:#1a372c; --line:#2e4b3f;
+    --ink:#f4f1ea; --muted:#c9c3b5;
+    --heading:#f4f1ea; --link:#f4f1ea; --link-hover:#cfae78;
+    --accent:#cfae78; --accent-text:#cfae78; --focus:#cfae78;
+    --btn-bg:#cfae78; --btn-ink:#0f2219; --btn-hover:#e2c894; --ghost:#f4f1ea; --ghost-hover-bg:#1a372c;
+    --contact-bg:#1a372c; --contact-ink:#f4f1ea; --contact-body:#e6e0d2; --contact-link:#ffffff; --contact-hover:#cfae78; --contact-border:#cfae78;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --bg:#0f2219; --soft:#153026; --card:#1a372c; --line:#2e4b3f;
+  --ink:#f4f1ea; --muted:#c9c3b5;
+  --heading:#f4f1ea; --link:#f4f1ea; --link-hover:#cfae78;
+  --accent:#cfae78; --accent-text:#cfae78; --focus:#cfae78;
+  --btn-bg:#cfae78; --btn-ink:#0f2219; --btn-hover:#e2c894; --ghost:#f4f1ea; --ghost-hover-bg:#1a372c;
+  --contact-bg:#1a372c; --contact-ink:#f4f1ea; --contact-body:#e6e0d2; --contact-link:#ffffff; --contact-hover:#cfae78; --contact-border:#cfae78;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--bg)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;color:var(--ink);background:var(--bg);line-height:1.6;font-size:1.0625rem}
+img{max-width:100%;height:auto}
+a{color:var(--link);text-underline-offset:.15em}
+a:hover{color:var(--link-hover)}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 1.25rem}
+.skip{position:absolute;left:-999px;top:0;background:var(--btn-bg);color:var(--btn-ink);padding:.5rem 1rem;z-index:10}
+.skip:focus{left:1rem;top:1rem;color:var(--btn-ink)}
+
+/* Theme-specific logo swap: <picture> follows the OS; a saved toggle choice (data-theme) shows a fixed image instead */
+.theme-only-light,.theme-only-dark,:root[data-theme] .theme-auto{display:none !important}
+:root[data-theme="light"] .theme-only-light,:root[data-theme="dark"] .theme-only-dark{display:block !important}
+
+/* Header */
+.site-header{border-bottom:1px solid var(--line);background:var(--bg)}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding-top:.6rem;padding-bottom:.6rem}
+.logo{display:block;text-decoration:none}
+.logo img{height:52px;width:auto}
+.logo picture img,.logo>img{display:block}
+.header-right{display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap}
+.nav ul{list-style:none;margin:0;padding:0;display:flex;gap:1.25rem;flex-wrap:wrap}
+.nav a{color:var(--muted);text-decoration:none;font-weight:500}
+.nav a:hover{color:var(--link);text-decoration:underline}
+
+/* Theme toggle (only shown when JS is running; see .js in <head>) */
+.theme-toggle{display:none;align-items:center;justify-content:center;width:40px;height:40px;padding:0;border-radius:999px;
+  border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.js .theme-toggle{display:inline-flex}
+.theme-toggle:hover{background:var(--soft);border-color:var(--muted)}
+.theme-toggle svg{width:20px;height:20px;display:block}
+.theme-toggle .icon-sun{display:none}
+html.theme-dark .theme-toggle .icon-sun{display:block}
+html.theme-dark .theme-toggle .icon-moon{display:none}
+
+/* Hero */
+.hero{background:var(--soft);padding:5rem 0 4.5rem}
+.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:.8rem;font-weight:700;color:var(--accent-text);margin:0 0 .75rem}
+.hero h1{font-size:clamp(2rem,5vw,3.25rem);line-height:1.15;margin:0 0 1rem;max-width:24ch;color:var(--heading)}
+.hero h1::after{content:"";display:block;width:4rem;height:4px;background:var(--accent);border-radius:2px;margin-top:1.25rem}
+.hero p.lede{font-size:1.2rem;color:var(--muted);max-width:42rem;margin:0 0 2rem}
+.btn{display:inline-block;padding:.8rem 1.4rem;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid var(--btn-bg)}
+.btn-primary{background:var(--btn-bg);color:var(--btn-ink)}
+.btn-primary:hover{background:var(--btn-hover);border-color:var(--btn-hover);color:var(--btn-ink)}
+.btn-ghost{color:var(--ghost);border-color:var(--ghost);margin-left:.5rem}
+.btn-ghost:hover{background:var(--ghost-hover-bg);color:var(--ghost)}
+
+/* Sections */
+section{padding:4rem 0}
+section h2{font-size:clamp(1.6rem,3vw,2rem);margin:0 0 .5rem;color:var(--heading)}
+.section-intro{color:var(--muted);max-width:42rem;margin:0 0 2rem}
+.alt{background:var(--soft)}
+.grid{display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:var(--radius);padding:1.5rem;display:flex;flex-direction:column}
+.card h3{margin:0 0 .5rem;font-size:1.25rem;color:var(--heading)}
+.card p{margin:0 0 1rem;color:var(--muted)}
+.card ul{margin:0 0 1rem;padding-left:1.1rem;color:var(--muted)}
+.card .card-link{margin-top:auto;font-weight:600}
+.card-note{margin-top:auto;font-size:.9rem;color:var(--muted);font-style:italic}
+.about p{max-width:42rem}
+
+/* Contact */
+#contact{padding-top:4rem}
+@media (max-width:40rem){#contact{padding-top:3rem}}
+.contact-box{background:var(--contact-bg);color:var(--contact-ink);border-bottom:4px solid var(--contact-border);border-radius:var(--radius);padding:2.5rem 1.5rem;text-align:center}
+.contact-box h2{color:var(--contact-ink)}
+.contact-box p{color:var(--contact-body);margin:0 auto 1.5rem;max-width:36rem}
+.contact-box a.email{color:var(--contact-link);font-size:clamp(1.15rem,3.5vw,1.5rem);font-weight:700;word-break:break-word}
+.contact-box a.email:hover{color:var(--contact-hover)}
+.contact-box :focus-visible{outline-color:var(--contact-hover)}
+
+/* Footer */
+.site-footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-size:.95rem}
+.site-footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.site-footer p{margin:0}
+.foot-brand{display:flex;align-items:center;gap:.75rem}
+.foot-brand img{width:36px;height:36px;display:block}
+
+/* 404 */
+.notfound{min-height:60vh;display:flex;align-items:center}
+.notfound h1{color:var(--heading);font-size:clamp(2rem,5vw,3rem);margin:0 0 .5rem}
+
+@media (max-width:40rem){
+  .hero{padding:3.25rem 0 3rem}
+  section{padding:3rem 0}
+  .site-header .wrap{justify-content:center}
+  .logo img{height:40px}
+  .site-header .wrap{position:relative}
+  .theme-toggle{position:absolute;top:.6rem;right:1rem}
+  .header-right{justify-content:center;gap:1rem}
+  .nav ul{gap:1rem;justify-content:center}
+  .btn{display:block;text-align:center}
+  .btn-ghost{margin:.75rem 0 0}
+  .site-footer .wrap{justify-content:center;text-align:center}
+}

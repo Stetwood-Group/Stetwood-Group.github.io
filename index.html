@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stetwood Group | Product description writing and research support</title>
+  <meta name="description" content="Stetwood Group is the home of Ethan's freelance work: product description writing and research and admin virtual assistant support.">
+  <link rel="canonical" href="https://stetwood.com/">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f4f1ea" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f2219" media="(prefers-color-scheme: dark)">
+  <script>
+    /* Runs before first paint: apply a saved theme choice so there's no flash. */
+    (function(){
+      var d=document.documentElement, t=null;
+      d.classList.add('js');
+      try{ t=localStorage.getItem('stetwood-theme'); }catch(e){}
+      if(t!=='light' && t!=='dark') t=null;
+      if(t) d.setAttribute('data-theme',t);
+      var dark = t ? t==='dark' : (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches);
+      d.classList.add(dark?'theme-dark':'theme-light');
+    })();
+  </script>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/styles.css">
+
+  <!-- Open Graph / social preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Stetwood Group">
+  <meta property="og:title" content="Stetwood Group">
+  <meta property="og:description" content="Product description writing and research and admin virtual assistant support.">
+  <meta property="og:url" content="https://stetwood.com/">
+  <!-- TODO(Ethan): add a 1200x630 social image (e.g. /og-image.png) and uncomment:
+  <meta property="og:image" content="https://stetwood.com/og-image.png">
+  <meta property="og:image:alt" content="Stetwood Group">
+  -->
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="/" aria-label="Stetwood Group home">
+        <!-- Follows the OS setting (works without JS) -->
+        <picture class="theme-auto">
+          <source srcset="/brand/lockup-header-dark.svg" media="(prefers-color-scheme: dark)">
+          <img src="/brand/lockup-header-light.svg" alt="Stetwood Group" width="296" height="52">
+        </picture>
+        <!-- Shown instead when the visitor picked a theme with the toggle -->
+        <img class="theme-only-light" src="/brand/lockup-header-light.svg" alt="Stetwood Group" width="296" height="52">
+        <img class="theme-only-dark" src="/brand/lockup-header-dark.svg" alt="Stetwood Group" width="296" height="52">
+      </a>
+      <div class="header-right">
+      <nav class="nav" aria-label="Main">
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+        <button type="button" class="theme-toggle" aria-label="Switch theme" title="Switch theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M21 14.6A9 9 0 0 1 9.4 3a.6.6 0 0 0-.8-.7A10 10 0 1 0 21.7 15.4a.6.6 0 0 0-.7-.8z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v2.5M12 20v2.5M1.5 12H4M20 12h2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></g></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap">
+        <p class="eyebrow">Stetwood Group</p>
+        <h1 id="hero-title">Clear writing and dependable support.</h1>
+        <p class="lede">Stetwood Group is the home for Ethan's freelance work: product description writing and research and admin virtual assistant support.</p>
+        <a class="btn btn-primary" href="#services">See services</a>
+        <a class="btn btn-ghost" href="#contact">Get in touch</a>
+      </div>
+    </section>
+
+    <section id="services" aria-labelledby="services-title">
+      <div class="wrap">
+        <h2 id="services-title">Services</h2>
+        <p class="section-intro">Freelance work available now, booked through the platforms below.</p>
+        <div class="grid">
+          <article class="card">
+            <h3>Product description writing</h3>
+            <p>Clear, accurate product descriptions that explain what an item is, who it's for, and why it's worth a look.</p>
+            <ul>
+              <li>Online store and marketplace listings</li>
+              <li>Written from your product details and specs</li>
+            </ul>
+            <!-- TODO(Ethan): confirm the Fiverr profile URL. fiverr.com blocked automated checks (HTTP 403), so it could not be verified.
+                 Expected: https://www.fiverr.com/stetwood  — when confirmed, replace the note below with:
+                 <a class="card-link" href="https://www.fiverr.com/stetwood" rel="noopener">View on Fiverr (stetwood) &rarr;</a> -->
+            <p class="card-note">Available on Fiverr (username: stetwood).</p>
+          </article>
+          <article class="card">
+            <h3>Research &amp; admin virtual assistant</h3>
+            <p>Organized, detail-minded support for the tasks that keep work moving.</p>
+            <ul>
+              <li>Online research and summaries</li>
+              <li>Data entry, spreadsheets, and general admin</li>
+            </ul>
+            <a class="card-link" href="https://www.upwork.com/freelancers/~015b38cca065b0d901" rel="noopener">View the Upwork profile &rarr;</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="about" class="about alt" aria-labelledby="about-title">
+      <div class="wrap">
+        <h2 id="about-title">About</h2>
+        <p>Stetwood Group is the name for Ethan's freelance work. Right now that means product description writing on Fiverr and research and admin virtual assistant support on Upwork.</p>
+        <!-- TODO(Ethan): optional 1–2 sentence bio (background, what you enjoy working on). Keep it factual. -->
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <div class="contact-box">
+          <h2 id="contact-title">Contact</h2>
+          <p>Questions about a project or a service? Send an email.</p>
+          <a class="email" href="mailto:contact@stetwood.com">contact@stetwood.com</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="foot-brand"><picture class="theme-auto"><source srcset="/brand/icon-dark-transparent.svg" media="(prefers-color-scheme: dark)"><img src="/brand/icon-light.svg" alt="" width="36" height="36"></picture><img class="theme-only-light" src="/brand/icon-light.svg" alt="" width="36" height="36"><img class="theme-only-dark" src="/brand/icon-dark-transparent.svg" alt="" width="36" height="36"><span>&copy; 2026 Stetwood Group</span></p>
+      <p><a href="mailto:contact@stetwood.com">contact@stetwood.com</a></p>
+    </div>
+  </footer>
+  <script src="/theme.js"></script>
+</body>
+</html>
