@@ -136,3 +136,7 @@ section h2{font-size:clamp(1.6rem,3vw,2rem);margin:0 0 .5rem;color:var(--heading
   .btn-ghost{margin:.75rem 0 0}
   .site-footer .wrap{justify-content:center;text-align:center}
 }
+
+/* Larger tap targets */
+.nav a{display:inline-block;padding:.6rem .35rem}
+.site-footer a{display:inline-block;padding:.5rem 0}
