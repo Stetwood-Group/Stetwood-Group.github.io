@@ -117,6 +117,11 @@ section h2{font-family:"Cormorant Garamond","Cormorant Garamond Fallback",Georgi
 .card .card-link{margin-top:auto;font-weight:600}
 .card-note{margin-top:auto;font-size:.9rem;color:var(--muted);font-style:italic}
 .about p{max-width:42rem}
+.prose p,.prose ul{max-width:42rem}
+.prose ul{padding-left:1.1rem}
+.prose li{margin:0 0 .75rem}
+.prose strong{color:var(--heading)}
+.fine-print{font-size:.9rem;color:var(--muted)}
 
 /* Contact */
 #contact{padding-top:4rem}
