@@ -39,6 +39,22 @@
   --contact-bg:#1a372c; --contact-ink:#f4f1ea; --contact-body:#e6e0d2; --contact-link:#ffffff; --contact-hover:#cfae78; --contact-border:#cfae78;
 }
 
+/* Headings: Cormorant Garamond 600 (self-hosted, Latin subset, SIL OFL; see /fonts/OFL.txt).
+   Only .hero h1 and section h2 use it; everything else stays on the system sans. */
+@font-face{
+  font-family:"Cormorant Garamond";
+  src:url("/fonts/cormorant-garamond-latin-600.woff2") format("woff2");
+  font-weight:600;font-style:normal;font-display:swap;
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+/* Metric-matched Georgia fallback so the swap barely shifts layout */
+@font-face{
+  font-family:"Cormorant Garamond Fallback";
+  src:local("Georgia");
+  font-weight:600;font-style:normal;
+  size-adjust:88%;ascent-override:105%;descent-override:33%;line-gap-override:0%;
+}
+
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;background:var(--bg)}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
@@ -79,7 +95,7 @@ html.theme-dark .theme-toggle .icon-moon{display:none}
 /* Hero */
 .hero{background:var(--soft);padding:5rem 0 4.5rem}
 .eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:.8rem;font-weight:700;color:var(--accent-text);margin:0 0 .75rem}
-.hero h1{font-size:clamp(2rem,5vw,3.25rem);line-height:1.15;margin:0 0 1rem;max-width:24ch;color:var(--heading)}
+.hero h1{font-family:"Cormorant Garamond","Cormorant Garamond Fallback",Georgia,serif;font-weight:600;font-size:clamp(2.3rem,6vw,3.75rem);line-height:1.1;margin:0 0 1rem;max-width:24ch;color:var(--heading)}
 .hero h1::after{content:"";display:block;width:4rem;height:4px;background:var(--accent);border-radius:2px;margin-top:1.25rem}
 .hero p.lede{font-size:1.2rem;color:var(--muted);max-width:42rem;margin:0 0 2rem}
 .btn{display:inline-block;padding:.8rem 1.4rem;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid var(--btn-bg)}
@@ -90,7 +106,7 @@ html.theme-dark .theme-toggle .icon-moon{display:none}
 
 /* Sections */
 section{padding:4rem 0}
-section h2{font-size:clamp(1.6rem,3vw,2rem);margin:0 0 .5rem;color:var(--heading)}
+section h2{font-family:"Cormorant Garamond","Cormorant Garamond Fallback",Georgia,serif;font-weight:600;font-size:clamp(1.85rem,3.5vw,2.35rem);margin:0 0 .5rem;color:var(--heading)}
 .section-intro{color:var(--muted);max-width:42rem;margin:0 0 2rem}
 .alt{background:var(--soft)}
 .grid{display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr))}
@@ -121,7 +137,7 @@ section h2{font-size:clamp(1.6rem,3vw,2rem);margin:0 0 .5rem;color:var(--heading
 
 /* 404 */
 .notfound{min-height:60vh;display:flex;align-items:center}
-.notfound h1{color:var(--heading);font-size:clamp(2rem,5vw,3rem);margin:0 0 .5rem}
+.notfound h1{font-family:"Cormorant Garamond","Cormorant Garamond Fallback",Georgia,serif;font-weight:600;color:var(--heading);font-size:clamp(2rem,5vw,3rem);margin:0 0 .5rem}
 
 @media (max-width:40rem){
   .hero{padding:3.25rem 0 3rem}
