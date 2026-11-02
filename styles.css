@@ -114,7 +114,7 @@ section h2{font-family:"Cormorant Garamond","Cormorant Garamond Fallback",Georgi
 .card h3{margin:0 0 .5rem;font-size:1.25rem;color:var(--heading)}
 .card p{margin:0 0 1rem;color:var(--muted)}
 .card ul{margin:0 0 1rem;padding-left:1.1rem;color:var(--muted)}
-.card .card-link{margin-top:auto;font-weight:600}
+.card .card-link{margin-top:auto;font-weight:600;padding:.5rem 0}
 .card-note{margin-top:auto;font-size:.9rem;color:var(--muted);font-style:italic}
 .about p{max-width:42rem}
 .prose p,.prose ul{max-width:42rem}
@@ -129,7 +129,7 @@ section h2{font-family:"Cormorant Garamond","Cormorant Garamond Fallback",Georgi
 .contact-box{background:var(--contact-bg);color:var(--contact-ink);border-bottom:4px solid var(--contact-border);border-radius:var(--radius);padding:2.5rem 1.5rem;text-align:center}
 .contact-box h2{color:var(--contact-ink)}
 .contact-box p{color:var(--contact-body);margin:0 auto 1.5rem;max-width:36rem}
-.contact-box a.email{color:var(--contact-link);font-size:clamp(1.15rem,3.5vw,1.5rem);font-weight:700;word-break:break-word}
+.contact-box a.email{color:var(--contact-link);font-size:clamp(1.15rem,3.5vw,1.5rem);font-weight:700;word-break:break-word;display:inline-block;padding:.5rem 0}
 .contact-box a.email:hover{color:var(--contact-hover)}
 .contact-box :focus-visible{outline-color:var(--contact-hover)}
 
@@ -161,3 +161,4 @@ section h2{font-family:"Cormorant Garamond","Cormorant Garamond Fallback",Georgi
 /* Larger tap targets */
 .nav a{display:inline-block;padding:.6rem .35rem}
 .site-footer a{display:inline-block;padding:.5rem 0}
+@media (max-width:22rem){.logo img{height:32px}}
