@@ -137,6 +137,7 @@ section h2{font-family:"Cormorant Garamond","Cormorant Garamond Fallback",Georgi
 .site-footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-size:.95rem}
 .site-footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
 .site-footer p{margin:0}
+.site-footer .foot-note{flex-basis:100%;font-size:.9rem;line-height:1.45;color:var(--muted)}
 .foot-brand{display:flex;align-items:center;gap:.75rem}
 .foot-brand img{width:36px;height:36px;display:block}
 
